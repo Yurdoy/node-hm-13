@@ -3,6 +3,8 @@ import "dotenv/config";
 import connectDb from "./src/config.js";
 import { Publisher } from "./src/models/publisher.js";
 import { Magazine } from "./src/models/magazine.js";
+import { Tag } from "./src/models/tag.js";
+import { Article } from "./src/models/article.js";
 
 const app = express();
 app.use(express.json());

@@ -1,17 +1,23 @@
 import mongoose from "mongoose";
 
-const publisherSchema = new mongoose.Schema(
+const magazineSchema = new mongoose.Schema(
   {
-    name: {
+    title: {
       type: String,
       required: true,
     },
-    location: {
-      type: String,
+    issueNumber: {
+      type: Number,
       required: true,
+      author: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Publisher",
+      },
     },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+  }
 );
 
-export const Publisher = mongoose.model("Publisher", publisherSchema);
+export const Magazine = mongoose.model("Magazine", magazineSchema);
